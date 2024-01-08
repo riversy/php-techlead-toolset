@@ -10,5 +10,8 @@ This command allow to compare two PHP vendor folders, one is the original and ot
 Outcome is the list of custom packages installed over the natice system.
 
 ```bash
-vendcmp -p /Users/riversy/Workspace/sample-2.4.3-p3 -s /Users/riversy/Workspace/sample-2.4.3-p3/magento 
+vendcmp -p /Users/riversy/Workspace/sample-2.4.3-p3 -s /Users/riversy/Workspace/sample-2.4.3-p3/magento
+venddiff -d /Users/riversy/Workspace/sample-2.4.3-p3/version_4.0.0.diff
 ```
+
+
