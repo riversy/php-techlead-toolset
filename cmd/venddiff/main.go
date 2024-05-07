@@ -89,7 +89,11 @@ func main() {
 	}
 
 	for _, chg := range chLst.List {
-		if chg.FromVer == "" || chg.ToVer == "" {
+		if chg.FromVer == "" && chg.ToVer == "" {
+			continue
+		}
+
+		if chg.FromVer == chg.ToVer {
 			continue
 		}
 
