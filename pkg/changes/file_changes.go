@@ -60,21 +60,17 @@ func (b *FileChangeBuilder) WithBPart(bPart string) *FileChangeBuilder {
 func (b *FileChangeBuilder) defineChangeType() {
 	changeType := ChangeTypeUndefined
 
-	if b.aPart == "" && b.bPart == "" {
-		panic("invalid file change type")
-	}
-
 	if b.aPart == b.bPart {
 		changeType = ChangeTypeModified
 	} else {
 		changeType = ChangeTypeMoved
 	}
 
-	if b.aPart == "" {
+	if b.aPart == "" && b.bPart != "" {
 		changeType = ChangeTypeAdded
 	}
 
-	if b.bPart == "" {
+	if b.bPart == "" && b.aPart != "" {
 		changeType = ChangeTypeRemoved
 	}
 

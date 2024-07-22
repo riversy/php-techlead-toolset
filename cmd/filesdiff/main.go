@@ -57,7 +57,9 @@ func main() {
 	}
 
 	for _, change := range fileChanges.Changes {
-		fmt.Println(change)
+		if change.ChangeType != changes.ChangeTypeUndefined {
+			fmt.Println(change)
+		}
 	}
 }
 
